@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: "Quattrocento", "Work Sans", Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
@@ -36,6 +36,7 @@ body {
 #page {
   position: relative;
   overflow-x: hidden;
+  overflow-y: clip;
   width: 100%;
   height: 100%;
   -webkit-transition: 0.5s;
@@ -73,14 +74,15 @@ a:hover, a:active, a:focus {
 }
 
 p {
+  font-family: "Quattrocento", "Work Sans", serif, sans-serif;
   margin-bottom: 20px;
 }
 
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: "Quattrocento", "Work Sans", serif, sans-serif;
   font-weight: 400;
-  margin: 0 0 20px 0;
+  margin: 0 0 1rem 0;
 }
 
 ::-webkit-selection {
@@ -431,6 +433,8 @@ h1, h2, h3, h4, h5, h6, figure {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+
+  min-height: 42rem;
 }
 @media screen and (max-width: 768px) {
   #fh5co-counter .event-wrap,
@@ -440,7 +444,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-counter .event-wrap h3,
 #fh5co-event .event-wrap h3 {
-  font-size: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
   color: var(--cream);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   display: block;
@@ -1109,9 +1114,10 @@ form label {
   }
 }
 .couple-half h3 {
-  font-family: "Sacramento", Arial, serif;
+  font-family: "Quattrocento", Arial, serif;
   color: var(--navy);
-  font-size: 4.2rem;
+  font-size: 2.4rem;
+  font-weight: bold;
 }
 .couple-half .groom, .couple-half .bride {
   float: left;
@@ -1703,7 +1709,7 @@ form label {
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: "Quattrocento", "Work Sans", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-decoration: none !important;
@@ -2068,6 +2074,8 @@ nav .row {
     align-items: center;
     justify-content: space-between;
     gap: 1.6rem;
+  font-family: "Quattrocento", "Work Sans", serif, sans-serif;
+  font-weight: bold;
   padding: 2.4rem 1.6rem;
   width: 100%;
   text-decoration: none !important;
@@ -2110,6 +2118,7 @@ nav .row {
 
 #mc_embed_signup {
   position: relative;
+  font: inherit !important;
 }
 
 #mc_embed_signup::before,
@@ -2259,5 +2268,76 @@ input#mc-embedded-subscribe {
   }
 }
 /* END: Events */
+
+.menu-1 {
+  transition: unset;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* START: Monty */
+.monty {
+  position: absolute;
+    bottom: -30px;
+    left: 44%;
+  max-width: 20rem;
+}
+
+@media only screen and (max-width: 30em) {
+  .monty {
+    left: 25%;
+  }
+}
+/* END: Monty */
+
+/* START: Mobile Menu */
+@media only screen and (max-width: 48em) {
+  .menu-1,
+  .menu-1.active {
+    display: block !important;
+    background: lightcoral;
+    height: 102vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5.2em 1.6rem 1.6rem;
+    display: flex !important;
+    max-width: 280px;
+    width: 100%;
+    transform: translateX(100%);
+  }
+  
+  .menu-1.active {
+    transform: translateX(0);
+    transition: all 0.16s ease-in-out;
+  }
+  
+  .menu-1.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100vw;
+    z-index: -1;
+    transform: translateX(-280px);
+  }
+  
+  .fh5co-nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .fh5co-nav ul li a {
+    padding: 1rem;
+  }
+
+}
+/* END: Mobile Menu */
 
 /* END: Custom CSS */
